@@ -126,16 +126,5 @@ barreras <- barreras %>%
 
 
 
-barreras3 <- barreras[,c(2,10,11,12,13)]
-names(barreras3)
-
-barreras3 <-  barreras %>% select(REVERSION,`TIPO DE ACTUACIÓN`,TIPO_ENTIDAD,TIPO_BARRERA,TIPO_ADECUACION)
-barreras3 <-  barreras %>% select(`TIPO DE ACTUACIÓN`,TIPO_ENTIDAD,TIPO_BARRERA,TIPO_ADECUACION,REVERSION)
-
-
-barreras3 <- lapply(barreras3,function(x) as_factor(x))
-barreras3 <- as.data.frame(barreras3)
-p <-  alluvial_wide(barreras3, max_variables = 5)
-parcats(p, marginal_histograms = TRUE, data_input = barreras3)
 
 
